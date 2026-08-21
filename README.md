@@ -1,76 +1,157 @@
-# README: Análisis y Modelado de Goles de Messi en Clubes
+# ⚽ Messi Goal Analysis & Predictive Modeling
 
-## Tabla de Contenidos
-1. [Introducción](#introducción)
-2. [Declaración del Problema](#declaración-del-problema)
-3. [Recolección de Datos](#recolección-de-datos)
-4. [Limpieza y Preparación de los Datos](#limpieza-y-preparación-de-los-datos)
-5. [Análisis Exploratorio de Datos](#análisis-exploratorio-de-datos)
-6. [Ingeniería de Características](#ingeniería-de-características)
-7. [Modelado y Evaluación](#modelado-y-evaluación)
-8. [Visualización y Dashboard](#visualización-y-dashboard)
-9. [Resultados y Discusión](#resultados-y-discusión)
-10. [Conclusión](#conclusión)
-11. [Trabajo Futuro](#trabajo-futuro)
+## 📌 Project Overview
 
+This project was developed as the final project of the Data Analytics Bootcamp at Ironhack.
+
+The project analyzes Lionel Messi's goal-scoring performance throughout his club career. The main objective was to explore patterns in his scoring performance and build predictive models to identify the factors associated with scoring multiple goals in a match.
+
+The project includes data cleaning, exploratory data analysis, feature engineering, machine learning, and an interactive Power BI dashboard.
 
 ---
 
-## Introducción
-Este proyecto analiza el rendimiento goleador de Lionel Messi a lo largo de su carrera en clubes. El objetivo principal fue construir un modelo predictivo capaz de estimar si Messi marcaría uno o más goles en un partido, así como identificar patrones clave que explican su éxito.
+## 📊 Power BI Dashboard
 
-## Declaración del Problema
-En el fútbol moderno, comprender el rendimiento de los jugadores es clave para optimizar decisiones deportivas y financieras. Este proyecto busca responder: ¿Cuáles son los factores determinantes para que Messi marque uno o más goles en un partido?
+<img width="1420" height="799" alt="image" src="https://github.com/user-attachments/assets/fb45e333-78f7-452a-927c-f7d8446f0ba1" />
 
-## Recolección de Datos
-- **Fuente**: Dataset "Messi, Neymar, Ronaldo, Lewandowski All Goals" de Kaggle.
+The dashboard explores Messi's goal-scoring performance across different dimensions, including:
 
-## Limpieza y Preparación de los Datos
-- Conversión de fechas
-- Clasificación de temporadas
-- Regulizar el formato de los minutos
-- Eliminación de columnas irrelevantes o duplicadas.
-- Conversión de variables categóricas a ordinales (ej, nivel del oponente, matchday, venue).
-- Transformación de la variable objetivo en binaria: 0 (1 gol) o 1 (más de 1 gol).
+- Goals by competition and tournament stage
+- Home vs. away performance
+- Goals by days without scoring
+- Performance across seasons
+- Whether the goal was the opening goal of the match
+- Top 10 favorite opponents
 
-## Análisis Exploratorio de Datos
-- Goles por temporada y lugar del partido.
-- Relación entre días sin marcar y rendimiento goleador.
-- Análisis del "días sin marcar óptimos" como métrica clave.
+---
 
-## Ingeniería de Características
-- **Variables creadas**:
-  - "Días sin marcar"
-  - Clasificación del oponente (preferido, normal, difícil).
-  - Transformación de "Venue" a binario (local/visitante).
-  - ¿Fue el gol del 1 a 0?
-  - Conversión de "Season" a un valor numérico.
+## 🎯 Project Objective
 
-## Modelado y Evaluación
-- **Modelos implementados**:
-  1. OLS.
-  2. Comparativa de Regression Tree, Linear Regression, KNN
-  3. Comparativa de DecisionTreeClassifier, LogisticRegression, KNeighborsClassifier
-  4. Random Forest Classifier (modelo final).
-- **Evaluación**:
-  - Random Forest obtuvo una accuracy del 0.74
-  - "Season" resultó ser la variable más influyente seguida de "días sin marcar"
+The main question explored in this project was:
 
-## Visualización y Dashboard
-- **Dashboard en Power BI**: Incluye gráficos interactivos de goles por temporada, días sin marcar, calsificacion de instancias según competencias, clubes, momento del partido donde marcó, rivales favoritos y si fue el gol del 1 a 0
-- **Gráfico destacado**: Relación entre goles totales y según días sin marcar.
+> **Which factors are associated with Lionel Messi scoring multiple goals in a match?**
 
-## Resultados y Discusión
-- Messi mantiene un rendimiento consistente a lo largo de los años.
-- Los "días sin marcar" tienden a aumentar ligeramente con el tiempo.
-- El modelo confirma que variables como la temporada, los dias sin marcar y las instancia del partido son claves.
+The analysis focuses on identifying historical patterns and evaluating whether different match and performance-related variables can help predict high-scoring performances.
 
-## Conclusión
-El proyecto demuestra cómo el análisis de datos puede ofrecer insights clave sobre el rendimiento de jugadores. Aunque los datos limitados restringieron el análisis completo, los resultados sientan una base para investigaciones futuras. Este mismo modelo y tipo de analisis podría aplicarse a más jugadores.
+---
 
-## Trabajo Futuro
-- Incluir datos de partidos donde Messi no marcó para optimizar el modelo.
-- Analizar partidos con la selección argentina.
-- Investigar la evolución del rendimiento según la edad y contexto competitivo.
+## 📂 Data Source
 
+The dataset used in this project comes from Kaggle:
 
+**Messi, Neymar, Ronaldo, Lewandowski All Goals**
+
+The analysis focuses specifically on Lionel Messi's club career.
+
+---
+
+## 🧹 Data Cleaning & Preparation
+
+The dataset required several preprocessing and cleaning steps, including:
+
+- Date conversion and standardization
+- Season classification
+- Standardization of goal-minute formats
+- Removal of irrelevant or duplicated columns
+- Transformation of categorical variables
+- Classification of opponents
+- Encoding match venue as home or away
+- Transformation of the target variable for predictive modeling
+
+The target variable was transformed to distinguish between matches with one goal and matches with multiple goals.
+
+---
+
+## 🔍 Exploratory Data Analysis
+
+The exploratory analysis focused on identifying patterns in Messi's scoring performance.
+
+The main areas explored include:
+
+- Goals across different seasons
+- Home vs. away performance
+- Goals by competition and tournament stage
+- Favorite opponents
+- Match context and competition instances
+- Relationship between goals and days without scoring
+
+One of the most relevant variables explored was **Days Since Last Goal**, which was later included in the predictive models.
+
+---
+
+## ⚙️ Feature Engineering
+
+Several variables were created and transformed during the analysis:
+
+- **Days Since Last Goal**
+- Opponent classification
+- Home/Away encoding
+- Whether the goal was the opening goal of the match
+- Numerical representation of the season
+
+---
+
+## 🤖 Modeling
+
+Several machine learning models were tested and compared.
+
+### Regression Models
+
+- Linear Regression
+- Regression Tree
+- K-Nearest Neighbors
+
+### Classification Models
+
+- Decision Tree Classifier
+- Logistic Regression
+- K-Nearest Neighbors Classifier
+- Random Forest Classifier
+
+The final selected model was the **Random Forest Classifier**.
+
+---
+
+## 📈 Results
+
+The Random Forest model achieved an accuracy of approximately:
+
+**0.74**
+
+According to the feature importance analysis, **Season** and **Days Since Last Goal** were among the most influential variables in the model.
+
+The project shows how historical performance patterns and engineered features can be used to explore and predict different scoring outcomes.
+
+---
+
+## 🛠️ Tools & Technologies
+
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Matplotlib
+- Jupyter Notebook
+- Power BI
+
+---
+
+## 🚀 Future Improvements
+
+Some possible improvements for the project include:
+
+- Including matches where Messi did not score
+- Expanding the dataset with additional match-level information
+- Applying the analysis to other players
+- Testing additional machine learning models
+- Exploring new contextual features related to match performance
+
+---
+
+## 👤 Author
+
+**Flor Guindo**
+
+Aspiring Data Analyst
+
+[GitHub](https://github.com/FlorGuindo)
