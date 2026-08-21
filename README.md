@@ -152,6 +152,6 @@ Some possible improvements for the project include:
 
 **Flor Guindo**
 
-Aspiring Data Analyst
+Data Analyst | Python | SQL | Power BI
 
 [GitHub](https://github.com/FlorGuindo)
