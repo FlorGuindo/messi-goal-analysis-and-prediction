@@ -2,7 +2,7 @@
 
 ## 📌 Project Overview
 
-This project was developed as the final project of the Data Analytics Bootcamp at Ironhack.
+> Final project developed as part of the Data Analytics Bootcamp at Ironhack.
 
 The project analyzes Lionel Messi's goal-scoring performance throughout his club career. The main objective was to explore patterns in his scoring performance and build predictive models to identify the factors associated with scoring multiple goals in a match.
 
